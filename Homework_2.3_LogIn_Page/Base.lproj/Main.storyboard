@@ -9,25 +9,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Successful Login View Controller-->
         <scene sceneID="SEV-lh-hqY">
             <objects>
-                <viewController id="Xcw-WK-A34" sceneMemberID="viewController">
+                <viewController id="Xcw-WK-A34" customClass="SuccessfulLoginViewController" customModule="Homework_2_3_LogIn_Page" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lqx-tK-Dni">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="lrZ-Ic-61w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KCN-lD-cdj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Mx-VK-9di" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="851" y="93"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Homework_2_3_LogIn_Page" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Login Screen" customClass="LoginPage" customModule="Homework_2_3_LogIn_Page" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,6 +55,9 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressLoginButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="fQz-PQ-ykU"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7LL-MJ-WC7">
                                 <rect key="frame" x="18" y="411" width="376" height="30"/>
@@ -63,12 +67,18 @@
                                         <state key="normal" title="Forgot Username?">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="remindUsernameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="cf6-rg-jJZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="048-yZ-INL">
                                         <rect key="frame" x="192" y="0.0" width="184" height="30"/>
                                         <state key="normal" title="Forgot Password?">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="remindPasswordButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="vKB-QH-ado"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -87,6 +97,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lKY-ea-bBQ" secondAttribute="trailing" constant="100" id="t0L-9j-Z01"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="forgotPasswordButton" destination="048-yZ-INL" id="NZ3-7N-QEW"/>
+                        <outlet property="forgotUsernameButton" destination="77V-IB-XKI" id="9Hp-hP-695"/>
+                        <outlet property="loginField" destination="id0-pq-cvt" id="lUJ-L3-sr1"/>
+                        <outlet property="passwordField" destination="rJq-Yd-AWB" id="HaC-nz-pBc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
