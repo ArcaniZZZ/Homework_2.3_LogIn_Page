@@ -43,8 +43,6 @@ class LoginPage: UIViewController {
             }))
             return
         }
-        let x = UIAlertController(title: "Hooray", message: "Works", preferredStyle: <#T##UIAlertController.Style#>)
-        
     }
     
     @IBAction func remindUsernameButton() {
