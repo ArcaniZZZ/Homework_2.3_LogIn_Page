@@ -12,7 +12,7 @@
         <!--Successful Login View Controller-->
         <scene sceneID="SEV-lh-hqY">
             <objects>
-                <viewController id="Xcw-WK-A34" customClass="SuccessfulLoginViewController" customModule="Homework_2_3_LogIn_Page" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Xcw-WK-A34" customClass="SuccessfulLoginViewController" customModule="Homework_2_3_LogIn_Page" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lqx-tK-Dni">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,6 @@
                                 </state>
                                 <connections>
                                     <action selector="pressLoginButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="fQz-PQ-ykU"/>
-                                    <segue destination="Xcw-WK-A34" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="Lb9-Ge-BhW"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7LL-MJ-WC7">
@@ -103,6 +102,7 @@
                         <outlet property="forgotUsernameButton" destination="77V-IB-XKI" id="9Hp-hP-695"/>
                         <outlet property="loginField" destination="id0-pq-cvt" id="lUJ-L3-sr1"/>
                         <outlet property="passwordField" destination="rJq-Yd-AWB" id="HaC-nz-pBc"/>
+                        <segue destination="Xcw-WK-A34" kind="show" identifier="LoginSegue" id="7cQ-JA-gcj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
