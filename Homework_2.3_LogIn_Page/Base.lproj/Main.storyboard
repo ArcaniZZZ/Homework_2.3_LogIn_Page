@@ -10,6 +10,21 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="SEV-lh-hqY">
+            <objects>
+                <viewController id="Xcw-WK-A34" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lqx-tK-Dni">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lrZ-Ic-61w"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Mx-VK-9di" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="851" y="93"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Homework_2_3_LogIn_Page" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="lKY-ea-bBQ">
-                                <rect key="frame" x="100" y="404.5" width="214" height="87"/>
+                                <rect key="frame" x="100" y="244" width="214" height="87"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="id0-pq-cvt">
                                         <rect key="frame" x="0.0" y="0.0" width="214" height="34"/>
@@ -33,14 +48,15 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="krv-Wt-njc">
-                                <rect key="frame" x="182.5" y="511.5" width="49" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <rect key="frame" x="176.5" y="351" width="61" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" systemColor="labelColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7LL-MJ-WC7">
-                                <rect key="frame" x="18" y="565.5" width="376" height="30"/>
+                                <rect key="frame" x="18" y="411" width="376" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77V-IB-XKI">
                                         <rect key="frame" x="0.0" y="0.0" width="184" height="30"/>
@@ -61,8 +77,8 @@
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="lKY-ea-bBQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GGz-Sg-DLv"/>
-                            <constraint firstItem="lKY-ea-bBQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Kxs-95-vBn"/>
                             <constraint firstItem="krv-Wt-njc" firstAttribute="top" secondItem="lKY-ea-bBQ" secondAttribute="bottom" constant="20" id="Lvd-Cm-npE"/>
+                            <constraint firstItem="lKY-ea-bBQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="Ofm-V2-NJg"/>
                             <constraint firstItem="lKY-ea-bBQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="W9p-FD-ZA6"/>
                             <constraint firstItem="7LL-MJ-WC7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="Xwk-16-DXR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7LL-MJ-WC7" secondAttribute="trailing" constant="20" id="c53-CN-3o8"/>
@@ -80,6 +96,9 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
