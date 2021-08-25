@@ -57,6 +57,7 @@
                                 </state>
                                 <connections>
                                     <action selector="pressLoginButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="fQz-PQ-ykU"/>
+                                    <segue destination="Xcw-WK-A34" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="Lb9-Ge-BhW"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7LL-MJ-WC7">
@@ -106,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="94"/>
+            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
         </scene>
     </scenes>
     <resources>
