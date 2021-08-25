@@ -9,59 +9,41 @@ import UIKit
 
 class LoginPage: UIViewController {
     
-    // MARK: - Outlets
-    
     @IBOutlet var loginField: UITextField!
     @IBOutlet var passwordField: UITextField!
     
     @IBOutlet var forgotUsernameButton: UIButton!
     @IBOutlet var forgotPasswordButton: UIButton!
     
-    // MARK: - Private arguments
-    
     private let password = "Password"
-    private let login = "Login"
-        
-    // MARK: - Methods
+    private let login = "Username"
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // MARK: - Buttons
-    
-    @IBAction private func pressLoginButton() {
-        
-        guard let login = loginField.text, !login.isEmpty else {
-            wrongEntry(action: UIAlertAction(title: "Ok", style: .default))
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let loggedInVc = segue.destination as? SuccessfulLoginViewController else { return }
+        guard loginField.text == login && passwordField.text == password else {
+            wrongEntry()
             return
         }
-        
-        guard let password = passwordField.text, !password.isEmpty else {
-            wrongEntry(action: UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                self.passwordField.text = ""
-            }))
-            return
-        }
-        
-        if loginField.text == login && passwordField.text == password {
-            performSegue(withIdentifier: "LoginSegue", sender: nil)
-        } else {
-            wrongEntry(action: UIAlertAction(title: "Ok", style: .default))
-            wrongEntry(action: UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                self.passwordField.text = ""
-            }))
-        }
+        guard let login = loginField.text else { return }
+        loggedInVc.username = login
     }
     
-    
-    
     @IBAction func remindUsernameButton() {
-        reminder(title: "You silly goose!", message: "Your login is: Login")
+        reminder(title: "You silly goose!", message: "Your login is: Username")
     }
     
     @IBAction func remindPasswordButton() {
         reminder(title: "You silly goose!", message: "Your password is: Password")
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard segue.source is SuccessfulLoginViewController else { return }
+        loginField.text = nil
+        passwordField.text = nil
     }
     
 }
@@ -77,9 +59,11 @@ extension LoginPage {
         present(reminder, animated: true)
     }
     
-    private func wrongEntry(title: String = "Oops!", message: String = "The login or password is incorrect!", action: UIAlertAction) {
+    private func wrongEntry(title: String = "Oops!", message: String = "The login or password is incorrect!") {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = action
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            self.passwordField.text = nil
+        })
         alert.addAction(okAction)
         present(alert, animated: true)
     }

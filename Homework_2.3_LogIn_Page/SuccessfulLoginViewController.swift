@@ -8,11 +8,19 @@
 import UIKit
 
 class SuccessfulLoginViewController: UIViewController {
-
+    
+    @IBOutlet var greetingMessage: UILabel!
+    
+    var username: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guard let username = username else { return }
+        greetingMessage.text = "Hello, \(username)!"
     }
     
-
+    @IBAction func signOffButtonPressed() {
+        dismiss(animated: true)
+    }
+    
 }
