@@ -8,7 +8,6 @@
 import UIKit
 
 class LoginPage: UIViewController {
-    
     // MARK: - Outlets
     
     @IBOutlet var loginField: UITextField!
@@ -31,7 +30,6 @@ class LoginPage: UIViewController {
     // MARK: - Buttons
     
     @IBAction private func pressLoginButton() {
-        
         guard let login = loginField.text, !login.isEmpty else {
             wrongEntry(action: UIAlertAction(title: "Ok", style: .default))
             return
@@ -44,17 +42,15 @@ class LoginPage: UIViewController {
             return
         }
         
-        if loginField.text == login && passwordField.text == password {
+        if self.login == login, self.password == password {
+            print("trigger")
             performSegue(withIdentifier: "LoginSegue", sender: nil)
-        } else {
-            wrongEntry(action: UIAlertAction(title: "Ok", style: .default))
-            wrongEntry(action: UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                self.passwordField.text = ""
-            }))
-        }
+        } 
+        wrongEntry(action: UIAlertAction(title: "Ok", style: .default))
+        wrongEntry(action: UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            self.passwordField.text = ""
+        }))
     }
-    
-    
     
     @IBAction func remindUsernameButton() {
         reminder(title: "You silly goose!", message: "Your login is: Login")
@@ -63,14 +59,12 @@ class LoginPage: UIViewController {
     @IBAction func remindPasswordButton() {
         reminder(title: "You silly goose!", message: "Your password is: Password")
     }
-    
 }
 
 // MARK: - Private Methods
 
 extension LoginPage {
-    
-    private func reminder(title: String, message: String){
+    private func reminder(title: String, message: String) {
         let reminder = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Oh me!", style: .default)
         reminder.addAction(okAction)
@@ -84,4 +78,3 @@ extension LoginPage {
         present(alert, animated: true)
     }
 }
-
